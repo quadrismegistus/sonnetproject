@@ -3,3 +3,4 @@
 data_*
 *.pyc
 data_poesy
+.DS_Store
