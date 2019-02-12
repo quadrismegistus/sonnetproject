@@ -42,3 +42,44 @@ Interpretation:
 The tradeoffs between precision and recall in these models can be seen here:
 
 ![figure](figure.png)
+
+### Import features
+
+#### Which are the top 10 best predictors of sonnets?
+
+* Having long lines (*meter length avg parse* and *meter length avg line*).
+* Rhyming 5->8 (as in abbaCddC); 6->7 (abbacDDc); 1-4 (AbbA); 2->3 (aBBa); 2->6 (aBbaaBba [Petrarchan])
+* Having a sonnet rhyme scheme (poesy finds best fit for rhyme scheme among its [list of rhyme schemes](https://github.com/quadrismegistus/poesy/blob/master/poesy/schemes/rhyme_schemes.txt)).
+
+| feat                                  | model | coeff |
+|---------------------------------------|-------|-------|
+| meter length avg parse                | poesy | 0.091 |
+| meter length avg line                 | poesy | 0.091 |
+| rhymes l05-l08                        | poesy | 0.077 |
+| rhyme scheme acc Sonnet H             | poesy | 0.062 |
+| rhymes l06-l07                        | poesy | 0.056 |
+| rhymes l01-l04                        | poesy | 0.055 |
+| rhymes l02-l03                        | poesy | 0.053 |
+| rhyme scheme acc Sonnet, Petrarchan C | poesy | 0.050 |
+| rhymes l02-l06                        | poesy | 0.049 |
+| rhyme scheme acc Sonnet, Petrarchan A | poesy | 0.049 |
+
+
+#### Which are the top 25 best predictors of non-sonnets?
+
+* Having couplets in the poem (many features are successive lines rhyming with each other).
+* Having the fourth syllable be weak (*meter perc lines fourthpos w*), indicating a trochaic-like line, swsW or an anapestic one, wwsW.
+* Having ternary feet (*meter mpos ww*).
+
+| feat                         | model | coeff  |
+|------------------------------|-------|--------|
+| rhymes l11-l12               | poesy | -0.084 |
+| rhyme scheme acc Couplet     | poesy | -0.081 |
+| rhymes l01-l02               | poesy | -0.076 |
+| rhymes l05-l06               | poesy | -0.070 |
+| rhymes l09-l10               | poesy | -0.061 |
+| rhymes l07-l08               | poesy | -0.060 |
+| rhymes l03-l04               | poesy | -0.057 |
+| rhymes l13-l14               | poesy | -0.056 |
+| meter perc lines fourthpos w | poesy | -0.046 |
+| meter mpos ww                | poesy | -0.043 |
