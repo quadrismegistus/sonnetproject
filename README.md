@@ -41,7 +41,7 @@ Interpretation:
 
 The tradeoffs between precision and recall in these models can be seen here:
 
-![figure](figure.png)
+<img src="figure.png" width="600" height="600">
 
 ### Important features
 
