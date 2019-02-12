@@ -43,7 +43,7 @@ The tradeoffs between precision and recall in these models can be seen here:
 
 ![figure](figure.png)
 
-### Import features
+### Important features
 
 #### Which are the top 10 best predictors of sonnets?
 
