@@ -26,7 +26,6 @@ The models that best predict sonnets are:
 | Poesy + Wordfreqs  | 0.884     | 0.822  | 0.852  |
 | Poesy              | 0.853     | 0.801  | 0.826  |
 | Rule-Based         | 0.776     | 0.834  | 0.804  |
-| Poesy (Just Rhyme) | 0.815     | 0.703  | 0.755  |
 | Rule-Based (Loose) | 0.577     | 0.969  | 0.723  |
 | Wordfreqs          | 0.707     | 0.700  | 0.703  |
 
