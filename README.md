@@ -10,9 +10,9 @@ This experiment was done to maximize replicability. Please join in, either at St
 	* *How to replicate*: This step cannot be replicated without access to the full corpus.
 
 * **[Step2-GenerateFeatureSets.ipynb](Step2-GenerateFeatureSets.ipynb)**: From the 1300 sonnet text files in `corpus/`, generate featuresets to save in `featuresets/`, where the index is the filename in `corpus/` (e.g. `corpus/Sonnets/Z200383337.txt`).
-	* *How to replicate:* rerun this notebook. You'll need [poesy](https://github.com/quadrismegistus/poesy) (Poetic proceessing for Python) and [mpi-slingshot](https://github.com/quadrismegistus/mpi-slingshot) to re-run the poetic features. Or just add to the bottom of notebook, or create your own, to save a featureset in `featuresets/` with the same indices.
+	* *How to replicate:* rerun this notebook. You'll need [poesy](https://github.com/quadrismegistus/poesy) (Poetic proceessing for Python) and [mpi-slingshot](https://github.com/quadrismegistus/mpi-slingshot) to re-run the poetic features. Or just create your own  featureset (with the same indices) and save it to `featuresets/` .
 
-* **[Step3-CompareModels.ipynb](Step3-CompareModels.ipynb)**: Classify sonnets-vs-nonsonnets using the featuresets in `featuresets/`, as well as custom variations. Results are shown and interpreted at the bottom.
+* **[Step3-CompareModels.ipynb](Step3-CompareModels.ipynb)**: Classify sonnets-vs-nonsonnets using the featuresets in `featuresets/`, as well as combinations of these featuresets. Results are shown and interpreted at the bottom.
 	* *How to replicate*: rerun this notebook. No special python libraries are needed.
 
 ## Major results
@@ -29,10 +29,14 @@ The models that best predict sonnets are:
 | Rule-Based (Loose) | 0.577     | 0.969  | 0.723  |
 | Wordfreqs          | 0.707     | 0.700  | 0.703  |
 
-Poetic features (poesy) in a logistic model perform best; poetic features in rule-based classifiers perform second best; the word frequency model performs worst.
+Interpretation:
+
+* Poetic features (from [poesy](https://github.com/quadrismegistus/poesy)) in a logistic model perform best (F1=0.83); adding word frequencies to them improves the model slightly (F1=0.85).
+* Poetic features in rule-based classifiers perform second best (F1=0.81).
+* The word frequency model performs worst (F1=0.70).
 
 ### Precision/recall curves
 
-
+The tradeoffs between precision and recall in these models can be seen here:
 
 ![figure](figure.png)
