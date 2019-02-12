@@ -41,7 +41,7 @@ Interpretation:
 
 The tradeoffs between precision and recall in these models can be seen here:
 
-<img src="figure.png" width="600" height="600">
+![precision/recall surves](figure.png)
 
 ### Important features
 
