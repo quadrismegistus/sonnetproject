@@ -1,6 +1,8 @@
 # The Sonnet Project
 
-What's a sonnet to a machine by any other name anyway?
+What's a sonnet to a machine by any other name?
+
+Using [poesy](https://github.com/quadrismegistus/poesy) to collect poetic features about sonnets (rhyme, meter, line length), this micro-experiment asks: which textual features best predict whether 14 lines of verse is a sonnet? Word frequencies, or poetic features? Answer: the latter.
 
 ## Pipeline of experiment
 
